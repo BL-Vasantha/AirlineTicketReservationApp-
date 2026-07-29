@@ -1,125 +1,126 @@
 
 # ✈️ Airline Ticket Reservation System
 
-## 📌 Product Overview
-
-The **Airline Ticket Reservation System** is a comprehensive airline reservation application that enables passengers to search, book, and manage flight tickets efficiently. The system provides secure user authentication, role-based access control, profile management, seat selection, payment integration, and booking management, ensuring a seamless experience for passengers, airline staff, and administrators.
-
----
-
-# 📘 Use Case 1: User Management
+# 📘 Use Case 2: Flight Search and Discovery
 
 ## 📌 Overview
 
-The **User Management** module is a core component of the Airline Ticket Reservation System. It handles user registration, authentication, profile management, and role-based access control. This ensures secure and personalized access for Passengers, Administrators, and Airline Staff.
+The **Flight Search and Discovery** module enables passengers to search, filter, compare, and explore available flights based on their travel requirements. It provides advanced search capabilities, detailed flight information, and optimized results using Java Stream API for grouping and aggregation.
 
 ---
 
 ## 🎯 Objectives
 
-- Enable secure user registration and login.
-- Manage user profiles and personal information.
-- Implement Role-Based Access Control (RBAC).
-- Provide account security features such as OTP verification, password encryption, and password reset.
-- Ensure secure authentication and authorization.
+- Search flights using various travel criteria.
+- Filter and sort flights based on passenger preferences.
+- Display detailed flight information.
+- Provide real-time flight availability and status.
+- Utilize Java Stream API for grouping, filtering, and aggregation operations.
 
 ---
 
-## 🧩 Use Case Scenarios
+# 🧩 Use Case Scenarios
 
-### 🔹 1.1 User Registration and Authentication
+## 🔹 2.1 Flight Search Operations
 
-The system allows users to:
+The system allows passengers to:
 
-- Register a new passenger with personal details (Name, Email, Phone Number, Date of Birth, Passport/ID).
-- Verify email and mobile number using OTP.
-- Create user credentials with encrypted passwords.
-- Implement role-based access (Passenger, Admin, Airline Staff).
-- Login using secure credentials with session management.
-- Support "Remember Me" functionality.
-- Reset passwords via Email/SMS.
-- Enable Multi-Factor Authentication (MFA).
-- Update user profile information.
-- Deactivate or delete user accounts.
-
----
-
-### 🔹 1.2 User Profile Management
-
-Users can:
-
-- View complete user profile with booking history.
-- Update personal information (contact details and preferences).
-- Add or update passport and identification documents.
-- Manage multiple passenger profiles (family members or frequent travelers).
-- Set travel preferences such as:
-  - Meal Preference
-  - Seat Preference
-  - Special Assistance
-- Manage communication preferences (Email and SMS notifications).
-- Add emergency contact information.
-
----
-
-### 🔹 1.3 User Role Management (Polymorphism & Inheritance)
-
-The system uses Object-Oriented Programming concepts to implement role management.
-
-#### Abstract Class
-
-- User
-
-#### Derived Classes
-
-- Passenger
-- Admin
-- AirlineStaff
-
-Inheritance and polymorphism are used to define role-specific behavior.
-
-### Role-Based Permissions
-
-#### Passenger
-
-- Register and Login
-- Manage personal profile
-- View booking history
-- Manage only their own bookings
-
-#### Admin
-
-- Manage all users
-- Manage all bookings
-- View all user information
-- Perform administrative operations
-
-#### Airline Staff
-
-- Manage flight information
-- View passenger bookings
-- Update flight-related information
-
-The system validates role-specific access to ensure users can access only authorized features.
+- Search flights by source airport code or city.
+- Search flights by destination airport code or city.
+- Filter flights by departure date.
+- Filter flights by return date for round-trip journeys.
+- Specify the number of passengers (Adults, Children, Infants).
+- Select travel class:
+  - Economy
+  - Premium Economy
+  - Business
+  - First Class
+- Search one-way, round-trip, or multi-city flights.
+- Apply filters based on:
+  - Price Range
+  - Departure Time
+  - Arrival Time
+  - Flight Duration
+- Filter flights by preferred airline.
+- Filter flights by number of stops:
+  - Non-stop
+  - One Stop
+  - Two or More Stops
+- Sort search results by:
+  - Price (Low to High / High to Low)
+  - Duration (Shortest First)
+  - Departure Time
+  - Arrival Time
 
 ---
 
-## 🔐 Security Features
+## 🔹 2.2 Flight Information Display
 
-- Password Encryption
-- Email OTP Verification
-- Mobile OTP Verification
-- Multi-Factor Authentication (MFA)
-- Secure Session Management
-- Role-Based Authorization (RBAC)
-- Password Reset
-- Input Validation
-- Exception Handling
+The system displays comprehensive flight information including:
+
+- List of available flights matching search criteria.
+- Airline name.
+- Flight number.
+- Aircraft type.
+- Departure and arrival times with timezone information.
+- Total flight duration.
+- Layover duration (for connecting flights).
+- Available seats by travel class.
+- Fare breakdown:
+  - Base Fare
+  - Taxes
+  - Additional Fees
+  - Total Fare
+- Baggage allowance:
+  - Cabin Baggage
+  - Check-in Baggage
+- Cancellation policy.
+- Flight modification policy.
+- Flight amenities:
+  - WiFi
+  - Meals
+  - Entertainment
+- Real-time flight status and delay information.
 
 ---
 
-## 🏗️ Design Approach
+## 🔹 2.3 Advanced Search Features (Streams with groupingBy)
 
-The project follows Object-Oriented Programming principles and a layered architecture.
+The system leverages the Java Stream API to perform advanced data processing.
+
+### Stream Operations
+
+- Group flights by airline using `Collectors.groupingBy()`.
+- Group flights by price range categories.
+- Group flights by departure time slots:
+  - Morning
+  - Afternoon
+  - Evening
+  - Night
+- Calculate average fare by airline.
+- Find the cheapest flight for each route using the `min()` collector.
+- Filter and group connecting flights based on layover duration.
+- Aggregate available seats across all travel classes.
+- Group round-trip options based on total journey time.
+
+---
+
+# 🔐 Key Features
+
+- Flexible flight search.
+- Multiple filtering options.
+- Advanced sorting capabilities.
+- Detailed flight information.
+- Real-time flight status.
+- Fare comparison.
+- Java Stream API integration.
+- Efficient grouping and aggregation operations.
+
+---
+
+# 🏗️ Design Approach
+
+The module follows Object-Oriented Programming principles and a layered architecture.
 
 ### OOP Principles
 
@@ -136,28 +137,30 @@ The project follows Object-Oriented Programming principles and a layered archite
 - Model Layer
 - Utility Layer
 
-This layered architecture separates responsibilities, improves maintainability, and supports scalability.
+The design separates responsibilities across different layers, improving maintainability, scalability, and code reusability.
 
 ---
 
 ## 📊 Expected Outcome
 
-- Secure and scalable user management system.
-- Personalized user experience.
-- Controlled access to system functionalities.
-- Improved data security and integrity.
-- Well-structured and maintainable application.
+- Fast and efficient flight search.
+- Accurate flight filtering and sorting.
+- Enhanced user experience with detailed flight information.
+- Efficient data processing using Java Stream API.
+- Improved application scalability and maintainability.
 
 ---
 
 ## 📚 Learning Outcomes
 
-- Understanding Authentication and Authorization.
-- Implementing Role-Based Access Control (RBAC).
-- Applying Object-Oriented Programming concepts.
-- Using Inheritance and Polymorphism effectively.
-- Implementing secure password encryption and OTP verification.
-- Managing user profiles securely.
-- Applying layered architecture in Java applications.
-- Handling validation and exception management effectively.
+- Implementing flight search functionality.
+- Applying filtering and sorting techniques.
+- Using Java Stream API effectively.
+- Working with `Collectors.groupingBy()`.
+- Performing aggregation operations using Streams.
+- Designing scalable search modules.
+- Applying Object-Oriented Programming principles.
+- Building layered architecture in Java applications.
+- Optimizing data processing using functional programming concepts.
 ```
+
