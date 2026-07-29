@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 
 public class Flight
 {
-
     private String flightNumber;
     private String airline;
     private String source;
@@ -48,3 +47,4 @@ public class Flight
                 " | ₹" + price + " | Stops: " + stops;
     }
 }
+

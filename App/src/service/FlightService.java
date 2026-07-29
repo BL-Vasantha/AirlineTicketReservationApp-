@@ -10,7 +10,8 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class FlightService {
+public class FlightService
+{
 
     private final FlightRepository repository = new FlightRepository();
 
