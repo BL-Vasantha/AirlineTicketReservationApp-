@@ -11,7 +11,6 @@ public class ScannerHelper
 
         while (true) {
 
-
             try {
 
                 System.out.print(prompt);
