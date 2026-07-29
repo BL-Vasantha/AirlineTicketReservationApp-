@@ -2,47 +2,37 @@
 # ✈️ Airline Ticket Reservation System
 
 
-✈️ 3. Seat Selection (Optional)
+✈️ 4. Booking Management
 
-The Seat Selection module allows passengers to view the aircraft seat map and choose their preferred seats before completing the booking. It also supports premium seating, automatic seat assignment, and group seating.
+Manage the complete booking process, from reservation to confirmation and booking history.
 
 ✨ Features
-🪑 Seat Map
-View the seat layout based on the aircraft.
-Show seat availability:
-🟩 Available
-🟥 Booked
-🩶 Blocked
-Identify Window, Middle, and Aisle seats.
-Highlight Premium and Emergency Exit seats.
-✅ Seat Selection
-Select preferred seats for each passenger.
-Validate seat availability before confirmation.
-Apply extra charges for premium seats.
-Change seats before payment.
-Auto-assign seats if none are selected.
-Support adjacent seating for family/group bookings.
-Restrict emergency exit seats to eligible passengers.
+📝 Create a new booking and generate a unique PNR.
+👤 Add and validate passenger details.
+💺 Include selected seats and calculate the total fare.
+💳 Confirm booking after successful payment.
+🎫 Generate an E-Ticket and booking confirmation.
+🔍 Retrieve bookings using PNR, Email, or E-Ticket Number.
+📜 View booking history and manage existing bookings.
 🔄 Workflow
 Select Flight
 │
 ▼
-View Seat Map
+Create Booking
 │
 ▼
-Choose Seat
+Add Passenger Details
 │
 ▼
-Validate Availability
+Payment
 │
 ▼
-Confirm Selection
+Booking Confirmed
 │
 ▼
-Proceed to Payment
-📌 Business Rules
-One passenger can reserve only one seat.
-Booked or blocked seats cannot be selected.
-Premium seats require additional charges.
-Exit row seats are assigned only to eligible passengers.
-If no seat is selected, the system assigns one automatically.
+Generate PNR & E-Ticket
+📌 Highlights
+Unique PNR for every booking.
+Secure passenger information.
+Automatic booking confirmation after payment.
+Easy booking search and history management.
