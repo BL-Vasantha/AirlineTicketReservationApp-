@@ -22,6 +22,7 @@ public class SeatService {
         }
     }
 
+
     // 🎯 Select Seat
     public boolean selectSeat(String seatNumber) {
         Optional<Seat> seatOpt = seatMap.getSeats().stream()
