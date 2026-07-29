@@ -1,6 +1,9 @@
 package main;
+
 import util.ScannerHelper;
-public class AdminMenu {
+
+public class AdminMenu
+{
 
     public static void showMenu() {
         boolean logout = false;
