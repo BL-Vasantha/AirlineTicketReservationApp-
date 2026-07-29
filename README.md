@@ -1,38 +1,41 @@
 
 # ✈️ Airline Ticket Reservation System
 
+## 💳 5. Payment Processing
 
-✈️ 4. Booking Management
+Securely process payments and manage refunds for flight bookings.
 
-Manage the complete booking process, from reservation to confirmation and booking history.
+### ✨ Features
 
-✨ Features
-📝 Create a new booking and generate a unique PNR.
-👤 Add and validate passenger details.
-💺 Include selected seats and calculate the total fare.
-💳 Confirm booking after successful payment.
-🎫 Generate an E-Ticket and booking confirmation.
-🔍 Retrieve bookings using PNR, Email, or E-Ticket Number.
-📜 View booking history and manage existing bookings.
-🔄 Workflow
-Select Flight
-│
-▼
-Create Booking
-│
-▼
-Add Passenger Details
-│
-▼
-Payment
-│
-▼
-Booking Confirmed
-│
-▼
-Generate PNR & E-Ticket
-📌 Highlights
-Unique PNR for every booking.
-Secure passenger information.
-Automatic booking confirmation after payment.
-Easy booking search and history management.
+* 💰 Support multiple payment methods (**UPI, Cards, EMI**).
+* 🧾 Display fare summary and apply discounts.
+* 🔒 Validate and securely process payments.
+* ✅ Generate payment receipt and invoice.
+* 🔄 Handle payment success, failure, and retry.
+* 💸 Process refunds based on cancellation policy.
+* 📢 Notify passengers about payment and refund status.
+
+### 🔄 Workflow
+
+```structure
+Select Payment Method
+        │
+        ▼
+Validate Payment
+        │
+        ▼
+Process Payment
+        │
+        ▼
+Payment Successful
+        │
+        ▼
+Generate Receipt
+```
+
+### 📌 Highlights
+
+* Multiple payment options.
+* Secure payment validation.
+* Instant booking confirmation.
+* Easy refund management.
