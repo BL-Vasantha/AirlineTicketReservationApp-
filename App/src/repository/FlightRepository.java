@@ -1,11 +1,13 @@
 package repository;
 
+
+
 import model.Flight;
+
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class FlightRepository
 {
@@ -17,6 +19,7 @@ public class FlightRepository
                 LocalDateTime.now().plusHours(2),
                 LocalDateTime.now().plusHours(5),
                 5000, 0, 50));
+
 
         flights.add(new Flight("6E202", "IndiGo", "Chennai", "Delhi",
                 LocalDateTime.now().plusHours(3),
