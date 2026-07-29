@@ -1,5 +1,6 @@
 package util;
 
+
 import java.util.Scanner;
 
 public class ScannerHelper
@@ -9,6 +10,7 @@ public class ScannerHelper
     public static int readInt(String prompt) {
 
         while (true) {
+
 
             try {
 
