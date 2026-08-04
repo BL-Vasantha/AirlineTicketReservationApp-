@@ -1,4 +1,3 @@
-
 package booking;
 
 public class ConfirmedState implements BookingState {
@@ -18,4 +17,3 @@ public class ConfirmedState implements BookingState {
         return "CONFIRMED";
     }
 }
-

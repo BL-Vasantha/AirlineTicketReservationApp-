@@ -1,4 +1,4 @@
-package menu;
+package main;
 
 import booking.Booking;
 import model.*;
