@@ -2,10 +2,7 @@ package main;
 
 import booking.Booking;
 import model.Flight;
-import payment.CardPayment;
-import payment.EMIPayment;
-import payment.Payment;
-import payment.UPIPayment;
+import payment.*;
 import service.BookingService;
 import service.FlightService;
 
