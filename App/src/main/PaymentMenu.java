@@ -1,9 +1,6 @@
 package main;
 
-import payment.CardPayment;
-import payment.EMIPayment;
-import payment.Payment;
-import payment.UPIPayment;
+import payment.*;
 import service.PaymentService;
 
 import java.util.Scanner;
