@@ -1,85 +1,128 @@
 ✈️ Airline Ticket Reservation System
-📌 Use Case 8: Flight Management (Admin / Airline Staff)
+📌 Use Case 9: Airport Management
 📖 Overview
-Use Case 8 focuses on admin-side flight management. It allows airline staff to create, update, search, and monitor flights in the system.
+Use Case 9 introduces Airport Management, which handles all airport-related data used across the system.
 
-This module works along with previous use cases (UC1–UC7) and provides full control over flight operations.
+This module integrates with:
+
+✈️ Flight Management (UC8)
+🎟️ Booking System (UC1–UC5)
+🔄 Modification (UC6)
+❌ Cancellation (UC7)
+It ensures that all flights and bookings reference valid and well-managed airport data.
 
 🎯 Features
-🔹 8.1 Flight Creation and Setup
-Create new flights with:
+🔹 9.1 Airport Information Management
+Admin can manage airport details:
 
-Airline name
-Flight number
-Source & destination
-Departure & arrival time
-Seat capacity
-Base fare
-Default configurations:
+Add new airport with:
 
-Aircraft type (A320)
-Status (ON_TIME)
-Baggage allowance
-🔹 8.2 Flight Information Management
-Update flight status:
+Airport Code (IATA/ICAO)
+Airport Name
+City
+Country
+Update airport details
 
-ON_TIME
-DELAYED
-CANCELLED
-Modify fare dynamically
+Set timezone for each airport
 
-Change aircraft type
+Define terminal information
 
-Manage seat availability (via booking/cancellation)
+Mark airport as:
 
-Handle operational updates like delays
+✅ Active
+❌ Inactive
+Store airport facilities:
 
-🔹 8.3 Flight Search and Filtering
-Search flights by airline
-Filter by route (source → destination)
-Filter by flight status
-View occupancy rate (percentage of booked seats)
-🏗️ Class Used
-📦 FlightManagementService
-Handles all admin operations:
+Lounge
+Wi-Fi
+Parking
+Add contact details
 
-createFlight() → Create new flight
-updateStatus() → Change flight status
-updateFare() → Modify pricing
-searchByAirline() → Find flights by airline
-searchByRoute() → Filter by route
-filterByStatus() → Filter flights by status
-occupancyReport() → View seat occupancy
+🔹 9.2 Airport Search and Retrieval
+System supports:
+
+🔍 Search airport by:
+
+Code (e.g., MAA, DEL)
+City name
+Airport name
+🌍 List airports by country
+
+⚡ Auto-suggest airports during flight booking
+
+📄 Display airport details to passengers
+
+🏗️ Classes Involved
+📦 Airport
+Represents airport entity:
+
+code
+name
+city
+country
+timezone
+status (ACTIVE / INACTIVE)
+facilities
+contact details
+📦 AirportManagementService
+Handles all operations:
+
+addAirport() → Add new airport
+updateAirport() → Modify details
+searchByCode() → Find by airport code
+searchByCity() → Find airports in a city
+searchByName() → Find by airport name
+listByCountry() → List airports by country
+autoSuggest() → Suggest airports while typing
+📊 Example Flow
 📈 Sample Output
-Flight Created ✅: AI101 | Air India | Chennai -> Delhi | ₹5000 | Seats: 50 | Status: ON_TIME
-Flight Created ✅: 6E202 | IndiGo | Chennai -> Delhi | ₹4500 | Seats: 40 | Status: ON_TIME
+AirportManagementService airportService = new AirportManagementService();
 
-Status Updated: AI101 | Air India | Chennai -> Delhi | ₹5000 | Seats: 50 | Status: DELAYED
+// Add Airports airportService.addAirport("MAA", "Chennai International Airport", "Chennai", "India"); airportService.addAirport("DEL", "Indira Gandhi International Airport", "Delhi", "India");
 
-Fare Updated: 6E202 | IndiGo | Chennai -> Delhi | ₹4800 | Seats: 40 | Status: ON_TIME
+// Search airportService.searchByCode("MAA"); airportService.searchByCity("Chennai");
 
-Flights by Airline: IndiGo
-6E202 | IndiGo | Chennai -> Delhi | ₹4800 | Seats: 40 | Status: ON_TIME
+// List airportService.listByCountry("India");
 
-Flight Occupancy Report:
-AI101 → 0.0% full
-6E202 → 0.0% full
+// Auto Suggest airportService.autoSuggest("Ch");
+
+Airport Added ✅: MAA | Chennai | India
+Airport Added ✅: DEL | Delhi | India
+
+Search by Code: MAA
+MAA | Chennai International Airport | Chennai | India
+
+Airports in Chennai:
+MAA | Chennai International Airport | Chennai | India
+
+Airports in India:
+MAA | Chennai International Airport
+DEL | Indira Gandhi International Airport
+
+Suggestions for 'Ch':
+Chennai International Airport
 🔗 Integration with Previous Use Cases
 Use Case	Integration
-UC1–UC5	Uses flight data for booking
-UC6	Flight modification depends on available flights
-UC7	Cancellation updates seat availability
-UC8	Controls all flight data
+UC1–UC5	Booking uses airport codes for routes
+UC6	Flight modification depends on airport routes
+UC7	Cancellation unaffected but linked via flights
+UC8	Flights are created using airport data
+UC9	Central source of airport information
 ✅ Key Highlights
-Clean separation of Admin vs User operations
-Dynamic flight updates
-Real-time seat tracking using booking system
-Simple and scalable design
+Centralized airport data management
+Improves flight search accuracy
+Supports auto-suggestion (real-world feature)
+Clean separation of concerns
+Scalable for global airport data
+⚠️ Design Notes
+Flights should reference airport codes instead of plain city names
+Only ACTIVE airports should be used in booking/search
+Airport service should be initialized before flight creation
 🚀 Future Enhancements
-Add database (MySQL)
-Add login (Admin/User roles)
-Add dynamic pricing based on demand
-Add real-time notifications for delays
-Convert to Spring Boot microservices
+🌐 Integrate real airport database (IATA API)
+🗺️ Add map-based airport selection
+⏰ Timezone-based flight time conversion
+📡 Live airport status updates
+🔔 Passenger notifications based on airport changes
 👨‍💻 Author
 Airline Ticket Reservation System – Java Project (Bridgelabz Training Assignment)
