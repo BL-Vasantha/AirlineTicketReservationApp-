@@ -3,7 +3,6 @@ package service;
 import model.Seat;
 import model.SeatMap;
 
-
 import java.util.List;
 
 public class SeatService {

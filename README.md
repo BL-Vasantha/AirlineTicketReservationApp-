@@ -1,37 +1,37 @@
-✈️ Airline Booking System – Use Case 6
-📌 Booking Modification Features
-This module supports modifying an existing booking.
+✈️ Airline Ticket Reservation - Use Case 7 (Booking Cancellation)
+📌 Features Implemented
+1. Full Booking Cancellation
+   Retrieve booking
+   Validate cancellation eligibility (time-based)
+   Calculate refund after deduction
+   Update booking status to CANCELLED
+   Release seat
+   Process refund
+2. Partial Booking Cancellation
+   Cancel selected passengers
+   Calculate per-passenger refund
+   Update remaining passengers
+   Process partial refund
+3. Cancellation Policy
+   80% refund for high fare (>5000)
+   90% refund for normal fare
+   No cancellation allowed within 1 hour of departure
+   🛠️ Tech Used
+   Java
+   OOP Concepts
+   Service Layer Design
+   ▶️ How to Run
+   Run CancellationDemo.java
+   Observe:
+   Full cancellation flow
+   Partial cancellation flow
+   📂 Structure
+   model/ booking/ service/ payment/
 
-🔹 6.1 Flight Change
-Retrieve booking using PNR
-Search alternative flights
-Calculate fare difference
-Apply modification charges
-Update flight and seat
-Process additional payment
-Generate updated ticket
-🔹 6.2 Passenger Modification
-Update passenger name
-Update contact details
-Modify preferences
-Validate airline policy
-Apply charges if required
-🔹 6.3 Seat Change
-Show current seat
-Display available seats
-Select new seat
-Calculate upgrade charges
-Update booking
-🛠️ Tech Used
-Java
-OOP Design
-State Pattern
-Service Layer
-▶️ How to Run
-Compile all files
-Run Main.java
-Use menu options
-✅ Output
-Booking updated successfully
-Payment processed
-Updated ticket displayed
+🚀 Future Improvements
+Dynamic cancellation policy
+Database integration
+Email/SMS notification
+Seat availability update
+👨‍💻 Author
+Vasantha
