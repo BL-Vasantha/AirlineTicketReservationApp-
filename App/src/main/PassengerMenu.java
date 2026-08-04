@@ -1,19 +1,12 @@
-
 package main;
 
 import booking.Booking;
-import model.Flight;
-import model.Seat;
-import payment.CardPayment;
-import payment.Payment;
-import payment.UPIPayment;
-import service.BookingService;
-import service.FlightService;
-import service.SeatService;
+import model.*;
+import payment.*;
+import service.*;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class PassengerMenu {
 

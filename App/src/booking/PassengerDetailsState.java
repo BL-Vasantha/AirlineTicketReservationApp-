@@ -1,6 +1,5 @@
 package booking;
 
-
 public class PassengerDetailsState implements BookingState {
 
     @Override

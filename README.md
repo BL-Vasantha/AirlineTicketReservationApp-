@@ -1,41 +1,37 @@
+✈️ Airline Booking System – Use Case 6
+📌 Booking Modification Features
+This module supports modifying an existing booking.
 
-# ✈️ Airline Ticket Reservation System
-
-## 💳 5. Payment Processing
-
-Securely process payments and manage refunds for flight bookings.
-
-### ✨ Features
-
-* 💰 Support multiple payment methods (**UPI, Cards, EMI**).
-* 🧾 Display fare summary and apply discounts.
-* 🔒 Validate and securely process payments.
-* ✅ Generate payment receipt and invoice.
-* 🔄 Handle payment success, failure, and retry.
-* 💸 Process refunds based on cancellation policy.
-* 📢 Notify passengers about payment and refund status.
-
-### 🔄 Workflow
-
-```structure
-Select Payment Method
-        │
-        ▼
-Validate Payment
-        │
-        ▼
-Process Payment
-        │
-        ▼
-Payment Successful
-        │
-        ▼
-Generate Receipt
-```
-
-### 📌 Highlights
-
-* Multiple payment options.
-* Secure payment validation.
-* Instant booking confirmation.
-* Easy refund management.
+🔹 6.1 Flight Change
+Retrieve booking using PNR
+Search alternative flights
+Calculate fare difference
+Apply modification charges
+Update flight and seat
+Process additional payment
+Generate updated ticket
+🔹 6.2 Passenger Modification
+Update passenger name
+Update contact details
+Modify preferences
+Validate airline policy
+Apply charges if required
+🔹 6.3 Seat Change
+Show current seat
+Display available seats
+Select new seat
+Calculate upgrade charges
+Update booking
+🛠️ Tech Used
+Java
+OOP Design
+State Pattern
+Service Layer
+▶️ How to Run
+Compile all files
+Run Main.java
+Use menu options
+✅ Output
+Booking updated successfully
+Payment processed
+Updated ticket displayed
