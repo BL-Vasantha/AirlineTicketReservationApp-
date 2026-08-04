@@ -1,128 +1,82 @@
-✈️ Airline Ticket Reservation System
-📌 Use Case 9: Airport Management
-📖 Overview
-Use Case 9 introduces Airport Management, which handles all airport-related data used across the system.
 
-This module integrates with:
+✈️ Use Case 10: Priority Booking Processing (PriorityQueue - DSA)
 
-✈️ Flight Management (UC8)
-🎟️ Booking System (UC1–UC5)
-🔄 Modification (UC6)
-❌ Cancellation (UC7)
-It ensures that all flights and bookings reference valid and well-managed airport data.
+📌 Overview
+This use case implements a Priority Booking System using the PriorityQueue (Data Structure) concept in Java. It ensures that high-priority bookings (Express) are processed before normal bookings (Regular).
 
-🎯 Features
-🔹 9.1 Airport Information Management
-Admin can manage airport details:
+🎯 Objectives
+Handle booking requests based on priority
+Improve booking processing efficiency
+Implement real-world queue management using DSA
+🚀 Features
+🔹 1. Priority Levels
+EXPRESS → High priority (processed first)
+REGULAR → Normal priority
+🔹 2. Queue Management
+Uses Java PriorityQueue
 
-Add new airport with:
+Bookings are added with:
 
-Airport Code (IATA/ICAO)
-Airport Name
-City
-Country
-Update airport details
+Priority level
+Timestamp (to maintain order)
+🔹 3. Processing Logic
+EXPRESS bookings are processed before REGULAR
 
-Set timezone for each airport
+If same priority → processed based on timestamp (FIFO)
 
-Define terminal information
+Supports:
 
-Mark airport as:
+Add booking to queue
+Process next booking
+Process all bookings
+🔹 4. Fair Processing
+Ensures REGULAR bookings are not ignored
+Maintains balanced processing
+🧠 DSA Concept Used
+PriorityQueue
 
-✅ Active
-❌ Inactive
-Store airport facilities:
+Comparable Interface
 
-Lounge
-Wi-Fi
-Parking
-Add contact details
+Custom sorting:
 
-🔹 9.2 Airport Search and Retrieval
-System supports:
+Priority → First level sorting
+Timestamp → Second level sorting
+🏗️ Class Structure
+📁 model
+PriorityBooking
 
-🔍 Search airport by:
+Stores booking, priority, timestamp
+Implements Comparable
+📁 service
+PriorityBookingService
 
-Code (e.g., MAA, DEL)
-City name
-Airport name
-🌍 List airports by country
+Manages queue operations
+Handles processing logic
+⚙️ Workflow
+Create booking
+Assign priority (EXPRESS / REGULAR)
+Add booking to PriorityQueue
+System sorts automatically
+Process bookings in priority order
+📊 Example Execution
+Order of processing:
 
-⚡ Auto-suggest airports during flight booking
+EXPRESS → User2
+REGULAR → User1
+REGULAR → User3
+✅ Advantages
+Faster processing for urgent bookings
+Efficient queue handling
+Real-world airline booking simulation
+Demonstrates strong DSA knowledge
+🔥 Integration
+This use case is fully integrated with:
 
-📄 Display airport details to passengers
+UC1–UC5 → Booking
+UC6 → Modification
+UC7 → Cancellation
+UC8 → Flight Management
+UC9 → Airport Management
+🎉 Conclusion
+Use Case 10 enhances the system by introducing priority-based booking processing, making the airline reservation system more efficient, scalable, and realistic.
 
-🏗️ Classes Involved
-📦 Airport
-Represents airport entity:
-
-code
-name
-city
-country
-timezone
-status (ACTIVE / INACTIVE)
-facilities
-contact details
-📦 AirportManagementService
-Handles all operations:
-
-addAirport() → Add new airport
-updateAirport() → Modify details
-searchByCode() → Find by airport code
-searchByCity() → Find airports in a city
-searchByName() → Find by airport name
-listByCountry() → List airports by country
-autoSuggest() → Suggest airports while typing
-📊 Example Flow
-📈 Sample Output
-AirportManagementService airportService = new AirportManagementService();
-
-// Add Airports airportService.addAirport("MAA", "Chennai International Airport", "Chennai", "India"); airportService.addAirport("DEL", "Indira Gandhi International Airport", "Delhi", "India");
-
-// Search airportService.searchByCode("MAA"); airportService.searchByCity("Chennai");
-
-// List airportService.listByCountry("India");
-
-// Auto Suggest airportService.autoSuggest("Ch");
-
-Airport Added ✅: MAA | Chennai | India
-Airport Added ✅: DEL | Delhi | India
-
-Search by Code: MAA
-MAA | Chennai International Airport | Chennai | India
-
-Airports in Chennai:
-MAA | Chennai International Airport | Chennai | India
-
-Airports in India:
-MAA | Chennai International Airport
-DEL | Indira Gandhi International Airport
-
-Suggestions for 'Ch':
-Chennai International Airport
-🔗 Integration with Previous Use Cases
-Use Case	Integration
-UC1–UC5	Booking uses airport codes for routes
-UC6	Flight modification depends on airport routes
-UC7	Cancellation unaffected but linked via flights
-UC8	Flights are created using airport data
-UC9	Central source of airport information
-✅ Key Highlights
-Centralized airport data management
-Improves flight search accuracy
-Supports auto-suggestion (real-world feature)
-Clean separation of concerns
-Scalable for global airport data
-⚠️ Design Notes
-Flights should reference airport codes instead of plain city names
-Only ACTIVE airports should be used in booking/search
-Airport service should be initialized before flight creation
-🚀 Future Enhancements
-🌐 Integrate real airport database (IATA API)
-🗺️ Add map-based airport selection
-⏰ Timezone-based flight time conversion
-📡 Live airport status updates
-🔔 Passenger notifications based on airport changes
-👨‍💻 Author
-Airline Ticket Reservation System – Java Project (Bridgelabz Training Assignment)
