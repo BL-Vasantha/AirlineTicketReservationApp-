@@ -99,6 +99,7 @@ public class AirlineTicketReservationApp {
         // Report
         admin.occupancyReport();
 
+
         System.out.println("\n✅ SYSTEM EXECUTION COMPLETED");
     }
 }
