@@ -1,5 +1,6 @@
 package main;
 
+
 import util.ScannerHelper;
 
 public class AdminMenu
